@@ -1,0 +1,85 @@
+' Gambas class file
+
+num[78] As Integer
+test[100] As String
+Public Sub TextBox1_KeyPress()
+End
+
+Public Sub Button1_Click()
+  Dim n, i, j As Integer
+  TextArea1.text = ""
+  n = TextBox1.text
+  i = 0
+  While n > 0
+  num[i] = n % 2
+        n = n / 2
+        i = i + 1
+  Wend
+j = i - 1
+While j >= 0
+  TextArea1.Text = TextArea1.Text & num[j]
+  j = j - 1
+Wend
+End
+
+Public Sub Button2_Click()
+Dim n, i, j As Integer
+   TextArea1.text = ""
+  n = TextBox1.text
+  i = 0
+  While n > 0
+  num[i] = n % 8
+        n = n / 8
+        i = i + 1
+  Wend
+j = i - 1
+While j >= 0
+  TextArea1.Text = TextArea1.Text & num[j]
+  j = j - 1
+Wend
+End
+
+Public Sub Button3_Click()
+  Dim n, k, i, j As Integer
+   TextArea1.text = ""
+  n = TextBox1.text
+  i = 0
+  While n > 0
+  num[i] = n % 16
+        n = n / 16
+        i = i + 1
+  Wend
+j = 0
+k = 0
+While j < i
+  If num[j] == 10 Then
+  test[k] = "A"
+  k = k + 1
+  Else If num[j] == 11 Then
+  test[k] = "B"
+  k = k + 1
+  Else If num[j] == 12 Then
+  test[k] = "C"
+  k = k + 1
+  Else If num[j] == 13 Then
+  test[k] = "D"
+  k = k + 1
+  Else If num[j] == 14 Then
+  test[k] = "E"
+  k = k + 1
+  Else If num[j] == 15 Then
+  test[k] = "F"
+  k = k + 1
+  Else
+  test[k] = num[j]
+  k = k + 1
+  End If
+  j = j + 1
+Wend
+k = j
+While k >= 0
+  TextArea1.Text = TextArea1.Text & test[k]
+  k = k - 1 
+Wend
+End
+
